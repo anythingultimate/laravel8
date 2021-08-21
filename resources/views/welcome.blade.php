@@ -9,5 +9,6 @@
 </head>
 <body class="bg-blue-50 flex justify-center min-h-screen items-center">
     <h1 class="text-4xl md:text-6xl lg:text-9xl">Hello World</h1>
+    <script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>
