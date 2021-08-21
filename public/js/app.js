@@ -1883,7 +1883,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
   \*******************************/
 /***/ (() => {
 
-alert('Welcome to Laravel 8');
+
 
 /***/ }),
 
