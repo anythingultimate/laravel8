@@ -10,8 +10,6 @@
 <body class="bg-gray-50 ">
     @foreach ($posts as $post)
 
-    <!-- {{ dd($loop) }} -->
-
     <article class="px-3 mb-3 py-4">
         <h1 class="text-3xl font-semibold"><a href="posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
         <p class="pb-4">
