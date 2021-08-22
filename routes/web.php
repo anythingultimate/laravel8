@@ -1,15 +1,16 @@
 <?php
 
 use App\Models\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
-    // return Post::find('my-first-post');
-    $post = Post::all();
-    // ddd($post);
-    // ddd($post[0] -> getContents());
+
+    $posts = Post::all();
+
     return view('posts', [
-        'posts' => $post
+        'posts' => $posts
     ]);
 });
 

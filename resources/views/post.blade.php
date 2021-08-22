@@ -11,7 +11,10 @@
 
 <body class="bg-gray-50 ">
     <article class="px-3 mb-3 py-4">
-        <?= $post  ?>
+        <h1 class="text-3xl font-semibold"><?= $post->title ?></h1>
+        <p class="pb-4">
+            <?= $post->body ?>
+        </p>
     </article>
     <a class="px-3" href="/"> Go Back</a>
     <script src="{{asset('/js/app.js')}}"></script>
