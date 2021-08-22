@@ -1,30 +1,25 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('posts');
+    // return Post::find('my-first-post');
+    $post = Post::all();
+    // ddd($post);
+    // ddd($post[0] -> getContents());
+    return view('posts', [
+        'posts' => $post
+    ]);
 });
 
 Route::get('posts/{post}', function ($slug) {
-    $path = __DIR__."/../resources/posts/{$slug}.html";
+    // Find a post by its slug and pass it to a view called "post"
 
-    // dd($path);
-
-    if (!file_exists($path)) {
-
-        // dd('File does not exist');
-
-        // abort(404);
-
-        return redirect('/');
-    }
-
-    $post = cache()->remember("posts.$slug",now()->addMinutes(30), function () use ($path) {
-        return file_get_contents($path);
-    });
+    $post = Post::find($slug);
 
     return view('post', [
         'post' => $post
     ]);
+
 })->where('post', '[A-z_\-]+');
