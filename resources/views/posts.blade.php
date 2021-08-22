@@ -8,15 +8,18 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-50 ">
-    <?php foreach ($posts as $post) :?>
+    @foreach ($posts as $post)
+
+    <!-- {{ dd($loop) }} -->
+
     <article class="px-3 mb-3 py-4">
-        <h1 class="text-3xl font-semibold"><a href="posts/<?= $post->slug ?>"><?= $post->title ?></a></h1>
+        <h1 class="text-3xl font-semibold"><a href="posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
         <p class="pb-4">
-            <?= $post->excerpt ?>
+            {{ $post->excerpt }}
         </p>
         <hr />
     </article>
-    <?php endforeach; ?>
+    @endforeach;
     <script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>
