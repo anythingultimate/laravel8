@@ -20,6 +20,8 @@ class Post extends Model
         'category_id',
     ];
 
+    protected $with = ['category', 'author'];
+
     // public function getRouteKeyName() {
     //      return 'slug';
     //      }
