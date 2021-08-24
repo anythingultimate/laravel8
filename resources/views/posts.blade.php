@@ -1,14 +1,14 @@
 <x-layout>
-    @foreach ($posts as $post)
-        <article class="px-3 mb-3 py-4">
-            <h1 class="text-3xl font-semibold"><a href="posts/{{ $post->slug }}">{{ $post->title }}</a></h1>
-            <p>Posted by <a href="/authors/{{ $post->author->id }}" class="text-blue-600">{{ $post->author->name }}</a> in <a href="/categories/{{$post->category->slug}}"  class="text-blue-600">{{$post->category->name}}</a> category</p>
-            <p class="py-4">
-                {{ $post->excerpt }}
-            </p>
-            <hr />
-        </article>
-    @endforeach;
+    @include('_post-header')
+
+    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+        @if ($posts->count())
+            <x-post-grid :posts="$posts" />
+        @else
+            <h1>No Post Yet. Please check back later.</h1>
+        @endif
+    </main>
+
 </x-layout>
 
 
