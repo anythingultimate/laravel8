@@ -25,6 +25,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function setPasswordAttribute($password){
+        $this->attributes['password'] = bcrypt($password);
+    }
+
     public function posts(){
         // hasOne hasMany belongsTo belongsToMany
 
