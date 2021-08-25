@@ -41,9 +41,6 @@
 
                         <div class="space-x-2">
                             <x-category-button :category="$post->category" />
-                            <!-- <a href="#"
-                                class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                                style="font-size: 10px">Updates</a> -->
                         </div>
                     </div>
 
@@ -55,6 +52,14 @@
                         <p>{{$post->body}}</p>
                     </div>
                 </div>
+
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+	                @include ('posts._add-comment-form')
+
+	                @foreach ($post->comments as $comment)
+	                    <x-post-comment :comment="$comment"/>
+	                @endforeach
+	            </section>
             </article>
         </main>
 
