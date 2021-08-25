@@ -2,7 +2,6 @@
     <x-slot name="title">
         {{$post->title}}
     </x-slot>
-
     <section class="px-6 py-8">
 
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
@@ -17,7 +16,7 @@
                     <div class="flex items-center lg:justify-center text-sm mt-4">
                         <img src="/images/lary-avatar.svg" alt="Lary avatar">
                         <div class="ml-3 text-left">
-                            <h5 class="font-bold">{{ $post->author->name }}</h5>
+                            <h5 class="font-bold"><a href="/?author={{$post->author->username}}">{{ $post->author->name }}</a></h5>
                             <!-- <h6>Mascot at Laracasts</h6> -->
                         </div>
                     </div>
